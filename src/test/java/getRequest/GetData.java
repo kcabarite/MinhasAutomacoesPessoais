@@ -1,34 +1,32 @@
 package getRequest;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
+import actions.GetActions;
+import components.Pojo;
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Entao;
+import io.cucumber.java.pt.Quando;
 
 public class GetData {
 
-	@Test
-	public void testResponsecode() {
+	Pojo pojo;
 
-		Response resp = RestAssured.get("https://httpbin.org/get");
-
-		int code = resp.getStatusCode();
-
-		System.out.println("Status code is " + code);
-
-		Assert.assertEquals(code, 200);
+	@Dado("que ao acessar o link {string}")
+	public void que_ao_acessar_o_link(String url) {
 	}
+
+	@Quando("que no Json possui um campo {string}")
+	public void que_no_Json_possui_um_campo(String campo) {
+		GetActions.BDDGetCampo(campo);
+	}
+
+	@Entao("deve ser verificado se o endereco do link {string} esta correto")
+	public void deve_ser_verificado_se_o_endereco_do_link_esta_correto(String texto) {
+	}
+
 	
-	@Test
-	public void testbody() {
-
-		Response resp = RestAssured.get("https://httpbin.org/get");
-
-		String data = resp.asString();
-
-		System.out.println("Data is " + data);
-
-		System.out.println("O tempo de resposta é de " +resp.getTime() + "ms");
+	@Entao("deve ser verificado se o campo esta correto")
+	public void deve_ser_verificado_se_o_campo_esta_correto() {
+		GetActions.BDDGetCampoEx1();
 	}
+
 }

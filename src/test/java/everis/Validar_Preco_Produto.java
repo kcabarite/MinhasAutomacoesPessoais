@@ -35,7 +35,7 @@ public class Validar_Preco_Produto {
 	public void iniciar() {
 		url = "http://automationpractice.com/index.php";
 		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\kcabarit\\OneDrive - everis\\Escritorio\\Treinamentos\\teste-everis-automacao\\drivers\\92\\chromedriver.exe");
+				"C:\\Users\\kcabarit\\OneDrive - everis\\Escritorio\\Treinamentos\\teste-everis-automacao\\drivers\\93\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30000, TimeUnit.MILLISECONDS);
 		driver.manage().window().maximize();

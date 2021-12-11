@@ -26,7 +26,7 @@ public class HomeActions extends PageObject {
 		homeComponents = new HomeComponents(driver);
 		homeComponents.produtoFadedShortSleeveTshirts.click();
 		homeComponents.bt_Addtocart.click();
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		precoHome = homeComponents.precoprodutoHome.getAttribute("innerHTML");
 		System.out.println(precoHome);
 		
